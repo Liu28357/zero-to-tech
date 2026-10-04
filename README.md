@@ -36,10 +36,3 @@ git add .               # 把改动放进暂存区
 git commit -m "说明"     # 提交
 git log --oneline       # 回看历史
 ```
-
-## 后续计划
-
-- [ ] 把内联的 `onclick` 换成 `addEventListener`，让 HTML 里不再出现 JS
-- [ ] 给页面加上响应式布局，手机上也好看
-- [ ] 试试深色模式（`prefers-color-scheme`）
-- [ ] 部署到 GitHub Pages，让页面有个公网地址
