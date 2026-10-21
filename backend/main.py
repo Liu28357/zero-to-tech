@@ -6,8 +6,15 @@ from pydantic import BaseModel
 from pypinyin import lazy_pinyin, Style
 from snownlp import SnowNLP
 from datetime import datetime, timezone
+import os
+from dotenv import load_dotenv
+
 
 from storage import init_db, save_record, get_history      # ← 新增：跟存储层打交道，只经过这一行
+
+load_dotenv()                        # ← 读同目录下的 .env
+
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS").split(",")
 
 init_db()  # 初始化数据库，创建表格
 
@@ -15,7 +22,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 	allow_credentials=True,
