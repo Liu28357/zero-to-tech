@@ -27,6 +27,15 @@ export default function RootLayout({ children }) {
         <div className="app-shell">
           <div className="page-shell">
             <main className="page-content">{children}</main>
+            <footer className="site-footer">
+              <a
+                href="https://beian.miit.gov.cn/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                湘ICP备2026050401号-1
+              </a>
+            </footer>
           </div>
         </div>
       </body>

@@ -7,6 +7,8 @@ body {
 
 .app-shell {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(180deg, #ffffff 0%, var(--page-bg) 28%, var(--page-bg) 100%);
 }
 
@@ -14,6 +16,13 @@ body {
   width: min(var(--maxw), calc(100% - 40px));
   margin: 0 auto;
   padding: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.page-content {
+  flex: 1;
 }
 
 .dashboard-grid {
@@ -24,3 +33,22 @@ body {
 
 .panel-full { grid-column: span 12; }
 .panel-half { grid-column: span 6; }
+
+.site-footer {
+  margin-top: 8px;
+  padding: 24px 0 8px;
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--brand);
+}
