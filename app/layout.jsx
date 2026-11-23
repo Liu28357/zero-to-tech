@@ -15,6 +15,11 @@ import "../css/cards.css";
 import "../css/lab.css";
 import "../css/responsive.css";
 
+// 谷歌统计脚本：放在根布局里，全站所有页面都会加载。
+import Script from "next/script";
+
+const GTM_ID = "GTM-T74NVFMH";
+
 export const metadata = {
   title: "zero to tech",
   description: "个人主页 + 文字实验室",
@@ -38,6 +43,17 @@ export default function RootLayout({ children }) {
             </footer>
           </div>
         </div>
+        <Script
+          src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          `}
+        </Script>
       </body>
     </html>
   );
